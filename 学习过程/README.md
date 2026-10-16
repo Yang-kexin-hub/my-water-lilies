@@ -11,3 +11,5 @@ step-0-starter.js 是老师的起始代码。step-1 至 step-5 是当时保存�
 ## 步骤索引
 
 1. 笔触 dab：[代码快照](step-1-sketch.js) · [本步修改](step-1-changes.patch)
+
+2. 水色 waterColor：[代码快照](step-2-sketch.js) · [本步修改](step-2-changes.patch)
