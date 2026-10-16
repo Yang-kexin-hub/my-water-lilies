@@ -17,3 +17,5 @@ step-0-starter.js 是老师的起始代码。step-1 至 step-5 是当时保存�
 3. 涟漪 drawRipple：[代码快照](step-3-sketch.js) · [本步修改](step-3-changes.patch)
 
 4. 睡莲 drawLily：[代码快照](step-4-sketch.js) · [本步修改](step-4-changes.patch)
+
+5. 手势 onGesture：[代码快照](step-5-sketch.js) · [本步修改](step-5-changes.patch)
