@@ -1,0 +1,7 @@
+.course-progress/
+*.zip
+.DS_Store
+Thumbs.db
+学习过程/
+睡莲作业说明.md
+.vscode/
