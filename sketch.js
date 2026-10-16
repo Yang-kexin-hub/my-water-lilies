@@ -336,7 +336,39 @@ function drawLily(p) {
 
 // ★★★★★★ 第 5 步 开始：把这里的 onGesture 函数整个换成 Qwen 写的版本 ★★★★★★
 function onGesture(g, hand) {
-  // 临时版本：还没有手势动作
+  let tip = hand.points[8];
+  let palm = hand.points[9];
+  if (g === "Pointing_Up") {
+    ripples.push({ x: tip.x, y: tip.y, radius: 5, alpha: 255 });
+    playDrop();
+  }
+  if (g === "Open_Palm" && pads.length < MAX_PADS) {
+    pads.push({ x: palm.x, y: palm.y, size: random(60, 110), angle: random(TWO_PI), flower: false });
+  }
+  if (g === "Thumb_Up") {
+    let nearest = null;
+    let bestDist = 150;
+    for (let i = 0; i < pads.length; i++) {
+      let d = dist(palm.x, palm.y, pads[i].x, pads[i].y);
+      if (d < bestDist) {
+        bestDist = d;
+        nearest = pads[i];
+      }
+    }
+    if (nearest) {
+      nearest.flower = true;
+    } else {
+      pads.push({ x: palm.x, y: palm.y, size: random(60, 110), angle: random(TWO_PI), flower: true });
+    }
+    playBloom();
+  }
+  if (g === "Victory") {
+    timeIndex = (timeIndex + 1) % TIMES.length;
+    playTimeChord(timeIndex);
+  }
+  if (g === "Closed_Fist") {
+    pads = [];
+  }
 }
 // ★★★★★★ 第 5 步 结束 ★★★★★★
 
